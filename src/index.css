@@ -369,3 +369,7 @@ tr {
   background-color: black;
   color: white
 }
+
+.result {
+  margin: 80px;
+}

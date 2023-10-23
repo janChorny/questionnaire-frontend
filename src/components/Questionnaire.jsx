@@ -20,27 +20,27 @@ const Questionnaire = () => {
   const onSubmit = (data) => {
     setStatusValid(true);
     console.log(data)
-    // addNewNote(
-    //     { user: userId, 
-    //       patientOneStomata: data.patientOneStomata, 
-    //       patientTwoStomata: data.patientTwoStomata, 
-    //       patientThreeStomata: data.patientThreeStomata, 
-    //       patientFourStomata: data.patientFourStomata, 
-    //       patientFiveStomata: data.patientFiveStomata, 
-    //       stomataQuality: data.stomataQuality,
-    //       stomataEasyHard: data.stomataEasyHard,
-    //       stomataEssentialTime: data.stomataEssentialTime,
-    //       stomataEssentialBegin: data.stomataEssentialBegin,
-    //       stomataEssentialQuantity: data.stomataEssentialQuantity,
-    //       stomataEssentialRepeat: data.stomataEssentialRepeat,
-    //       needMarkInclude: data.needMarkInclude,
-    //       stomataOccupation: data.stomataOccupation,
-    //       stomataPlaceOccupation: data.stomataPlaceOccupation,
-    //       stomataHalfTimeOccupation: data.stomataHalfTimeOccupation,
-    //       yourName: data.yourName, 
-    //       completed: true  
-    //     }
-    //   )
+    addNewNote(
+        { user: userId, 
+          patientOneStomata: data.patientOneStomata, 
+          patientTwoStomata: data.patientTwoStomata, 
+          patientThreeStomata: data.patientThreeStomata, 
+          patientFourStomata: data.patientFourStomata, 
+          patientFiveStomata: data.patientFiveStomata, 
+          stomataQuality: data.stomataQuality,
+          stomataEasyHard: data.stomataEasyHard,
+          stomataEssentialTime: data.stomataEssentialTime,
+          stomataEssentialBegin: data.stomataEssentialBegin,
+          stomataEssentialQuantity: data.stomataEssentialQuantity,
+          stomataEssentialRepeat: data.stomataEssentialRepeat,
+          needMarkInclude: data.needMarkInclude,
+          stomataOccupation: data.stomataOccupation,
+          stomataPlaceOccupation: data.stomataPlaceOccupation,
+          stomataHalfTimeOccupation: data.stomataHalfTimeOccupation,
+          yourName: data.yourName, 
+          completed: true  
+        }
+      )
     reset();
     setTimeout(() => {
       setStatusValid(false);

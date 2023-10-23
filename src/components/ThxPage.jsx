@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const ThxPage = () => {
     const content = (
         <section className="public">
@@ -9,6 +11,9 @@ const ThxPage = () => {
                 <p>
                   Sie können jetzt diese Webseite schließen.
                 </p>
+                <button className="btn">
+                  <Link to="/notes">Results</Link>
+                </button>
             </main>
         </section>
 
