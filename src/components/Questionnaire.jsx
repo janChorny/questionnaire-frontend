@@ -18,27 +18,28 @@ const Questionnaire = () => {
 
   const onSubmit = (data) => {
     setStatusValid(true);
-    addNewNote(
-        { user: userId, 
-          patientOneStomata: data.patientOneStomata, 
-          patientTwoStomata: data.patientTwoStomata, 
-          patientThreeStomata: data.patientThreeStomata, 
-          patientFourStomata: data.patientFourStomata, 
-          patientFiveStomata: data.patientFiveStomata, 
-          stomataQuality: data.stomataQuality,
-          stomataEasyHard: data.stomataEasyHard,
-          stomataEssentialTime: data.stomataEssentialTime,
-          stomataEssentialBegin: data.stomataEssentialBegin,
-          stomataEssentialQuantity: data.stomataEssentialQuantity,
-          stomataEssentialRepeat: data.stomataEssentialRepeat,
-          needMarkInclude: data.needMarkInclude,
-          stomataOccupation: data.stomataOccupation,
-          stomataPlaceOccupation: data.stomataPlaceOccupation,
-          stomataHalfTimeOccupation: data.stomataHalfTimeOccupation,
-          yourName: data.yourName, 
-          completed: true  
-        }
-      )
+    console.log(data)
+    // addNewNote(
+    //     { user: userId, 
+    //       patientOneStomata: data.patientOneStomata, 
+    //       patientTwoStomata: data.patientTwoStomata, 
+    //       patientThreeStomata: data.patientThreeStomata, 
+    //       patientFourStomata: data.patientFourStomata, 
+    //       patientFiveStomata: data.patientFiveStomata, 
+    //       stomataQuality: data.stomataQuality,
+    //       stomataEasyHard: data.stomataEasyHard,
+    //       stomataEssentialTime: data.stomataEssentialTime,
+    //       stomataEssentialBegin: data.stomataEssentialBegin,
+    //       stomataEssentialQuantity: data.stomataEssentialQuantity,
+    //       stomataEssentialRepeat: data.stomataEssentialRepeat,
+    //       needMarkInclude: data.needMarkInclude,
+    //       stomataOccupation: data.stomataOccupation,
+    //       stomataPlaceOccupation: data.stomataPlaceOccupation,
+    //       stomataHalfTimeOccupation: data.stomataHalfTimeOccupation,
+    //       yourName: data.yourName, 
+    //       completed: true  
+    //     }
+    //   )
     reset();
     setTimeout(() => {
       setStatusValid(false);
@@ -68,7 +69,7 @@ const Questionnaire = () => {
                         <option className="select-option" value="B">B</option>
                         <option className="select-option" value="C">C</option>
                       </select>
-                      {errors.patientOneStomata && <span className="form__error-span">Error! No country selected</span>}
+                      {errors.patientOneStomata && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                     </div>
                     <div className="form__block">
                       <label className="form__label" htmlFor="patientTwoStomata">
@@ -85,7 +86,7 @@ const Questionnaire = () => {
                         <option className="select-option" value="B">B</option>
                         <option className="select-option" value="C">C</option>
                       </select>
-                      {errors.patientTwoStomata && <span className="form__error-span">Bitte wählen Sie eine Antwort aus</span>}
+                      {errors.patientTwoStomata && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                     </div>
                     <div className="form__block">
                       <label className="form__label" htmlFor="patientThreeStomata">
@@ -102,7 +103,7 @@ const Questionnaire = () => {
                         <option className="select-option" value="B">B</option>
                         <option className="select-option" value="C">C</option>
                       </select>
-                      {errors.patientThreeStomata && <span className="form__error-span">Bitte wählen Sie eine Antwort aus</span>}
+                      {errors.patientThreeStomata && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                     </div>
                     <div className="form__block">
                       <label className="form__label" htmlFor="patientFourStomata">
@@ -119,7 +120,7 @@ const Questionnaire = () => {
                         <option className="select-option" value="B">B</option>
                         <option className="select-option" value="C">C</option>
                       </select>
-                      {errors.patientFourStomata && <span className="form__error-span">Bitte wählen Sie eine Antwort aus</span>}
+                      {errors.patientFourStomata && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                     </div>
                     <div className="form__block">
                       <label className="form__label" htmlFor="patientFiveStomata">
@@ -136,7 +137,7 @@ const Questionnaire = () => {
                         <option className="select-option" value="B">B</option>
                         <option className="select-option" value="C">C</option>
                       </select>
-                      {errors.patientFiveStomata && <span className="form__error-span">Bitte wählen Sie eine Antwort aus</span>}
+                      {errors.patientFiveStomata && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                     </div>
                   </div>
 
@@ -188,7 +189,7 @@ const Questionnaire = () => {
                         />
                         sinnlos
                       </label>                     
-                      {errors.stomataQuality && <span className="form__payment--span error-span">Error. Select any option</span>}
+                      {errors.stomataQuality && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                     </div>
 
                     <div className="form__block">
@@ -225,7 +226,7 @@ const Questionnaire = () => {
                         />
                         komplex
                       </label>                     
-                      {errors.stomataEasyHard && <span className="form__payment--span error-span">Error. Select any option</span>}
+                      {errors.stomataEasyHard && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                     </div>
 
                     <div className="form__block">
@@ -302,7 +303,7 @@ const Questionnaire = () => {
                         />
                         länger als 5 min
                       </label>                 
-                      {errors.stomataEssentialTime && <span className="form__payment--span error-span">Error. Select any option</span>}
+                      {errors.stomataEssentialTime && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                     </div>
 
                   </div>
@@ -459,6 +460,7 @@ const Questionnaire = () => {
                         />
                         Nein
                       </label>
+                      {}
                       <label className="form__label" htmlFor="customMarkierung">
                         Falls nein, Warum?
                       </label>
@@ -469,7 +471,7 @@ const Questionnaire = () => {
                         {...register("needMarkInclude", { required: true })}
                         autoComplete="off"
                       />                 
-                      {errors.needMarkInclude && <span className="form__payment--span error-span">Error. Select any option</span>}
+                      {errors.needMarkInclude && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                     </div>
 
                   </div>
@@ -502,7 +504,7 @@ const Questionnaire = () => {
                         />
                         Nebentätigkeit
                       </label>                    
-                      {errors.stomataOccupation && <span className="form__payment--span error-span">Error. Select any option</span>}
+                      {errors.stomataOccupation && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                     </div>
 
                     <div className="form__block">
@@ -539,7 +541,7 @@ const Questionnaire = () => {
                         />
                         Niederlassung (ambulante Tätigkeit)
                       </label>                 
-                      {errors.stomataPlaceOccupation && <span className="form__payment--span error-span">Error. Select any option</span>}
+                      {errors.stomataPlaceOccupation && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                     </div>
 
                     <div className="form__block">
@@ -566,7 +568,7 @@ const Questionnaire = () => {
                         />
                         Teilzeit
                       </label>                               
-                      {errors.stomataHalfTimeOccupation && <span className="form__payment--span error-span">Error. Select any option</span>}
+                      {errors.stomataHalfTimeOccupation && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                     </div>
 
                   </div>
@@ -586,9 +588,9 @@ const Questionnaire = () => {
                   </div>
 
                   <button className="form__button" type="submit">
-                    Add new card
+                    Fragebogen abschicken
                   </button>
-                  {statusValid && <span className="form__submit--span message-span">Data has been saved</span>}
+                  {statusValid && <span className="form__message-span">Verschickt</span>}
                 </form>
 
                 <button className="btn">
