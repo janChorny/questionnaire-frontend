@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form';
 import { useAddNewNoteMutation } from "../features/notes/notesApiSlice"
 
 const Questionnaire = () => {
     const [addNewNote] = useAddNewNoteMutation()
     const userId = "6534300d61a72ae78c315321";
+    const navigate = useNavigate()
 
     const {
     register,
@@ -44,6 +45,7 @@ const Questionnaire = () => {
     setTimeout(() => {
       setStatusValid(false);
     }, 3000);
+    navigate(`/thxPage`)
   };
 
     const content = (
@@ -595,9 +597,6 @@ const Questionnaire = () => {
 
                 <button className="btn">
                   <Link to="/instructions">Zurück</Link>
-                </button>
-                <button className="btn">
-                  <Link to="/questionnaire">Bewertung beginnen</Link>
                 </button>
             </main>
         </section>

@@ -12,6 +12,7 @@ import NewNote from './features/notes/NewNote'
 import Prefetch from './features/auth/Prefetch'
 import Instructions from './components/Instructions';
 import Questionnaire from './components/Questionnaire';
+import ThxPage from './components/ThxPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="instructions" element={<Instructions/>} />
         <Route path="questionnaire" element={<Questionnaire/>} />
+        <Route path="thxPage" element={<ThxPage/>} />
 
         {/* <Route element={<Prefetch />}>
           <Route path="dash" element={<DashLayout />}>
