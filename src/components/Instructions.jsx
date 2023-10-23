@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom'
-import DashHeader from './DashHeader'
 
 const Instructions = () => {
     const content = (
         <section className="public">
-            <DashHeader />
             <main className="public__main">
                 <h2>Bewertungsanweisung</h2>
                 <p>
@@ -36,9 +34,6 @@ const Instructions = () => {
                   <Link to="/questionnaire">Bewertung beginnen</Link>
                 </button>
             </main>
-            <footer>
-                <Link to="/login">Admin Login</Link>
-            </footer>
         </section>
 
     )

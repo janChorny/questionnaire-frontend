@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Public from './components/Public'
 import Login from './features/auth/Login';
-import DashLayout from './components/DashLayout'
 import Welcome from './features/auth/Welcome'
 import NotesList from './features/notes/NotesList'
 import UsersList from './features/users/UsersList'
@@ -12,14 +11,17 @@ import EditNote from './features/notes/EditNote'
 import NewNote from './features/notes/NewNote'
 import Prefetch from './features/auth/Prefetch'
 import Instructions from './components/Instructions';
+import Questionnaire from './components/Questionnaire';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route index element={<Public />} />
         <Route path="public" index element={<Public />} />
         <Route path="login" element={<Login />} />
         <Route path="instructions" element={<Instructions/>} />
+        <Route path="questionnaire" element={<Questionnaire/>} />
 
         {/* <Route element={<Prefetch />}>
           <Route path="dash" element={<DashLayout />}>

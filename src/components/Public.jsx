@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom'
-import DashHeader from './DashHeader'
 
 const Public = () => {
     const content = (
         <section className="public">
-            <DashHeader />
             <main className="public__main">
                 <p>
                   Sehr geehrte Stomatherapeutinnen und -therapeuten,
@@ -51,9 +49,6 @@ const Public = () => {
                   <Link to="/instructions">Weiter</Link>
                 </button>
             </main>
-            <footer>
-                <Link to="/login">Admin Login</Link>
-            </footer>
         </section>
 
     )

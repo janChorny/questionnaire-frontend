@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 
-const DashHeader = () => {
+const Header = () => {
 
     const content = (
         <header className="dash-header">
             <div className="dash-header__container">
-                <Link to="/dash">
+                <Link to="/">
                     <img src="logo.png" alt="Logo" className="dash-header__img" />
                 </Link>
             </div>
@@ -14,4 +14,4 @@ const DashHeader = () => {
 
     return content
 }
-export default DashHeader
+export default Header
