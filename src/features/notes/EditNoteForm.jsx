@@ -1,18 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react"
-import { useUpdateNoteMutation, useDeleteNoteMutation } from "./notesApiSlice"
+import { useDeleteNoteMutation } from "./notesApiSlice"
 import { useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons"
 
 const EditNoteForm = ({ note, users }) => {
-
-    const [updateNote, {
-        isLoading,
-        isSuccess,
-        isError,
-        error
-    }] = useUpdateNoteMutation()
 
     const [deleteNote, {
         isSuccess: isDelSuccess,
@@ -29,27 +22,19 @@ const EditNoteForm = ({ note, users }) => {
 
     useEffect(() => {
 
-        if (isSuccess || isDelSuccess) {
+        if (isDelSuccess) {
             setTitle('')
             setText('')
             setUserId('')
             navigate('/dash/notes')
         }
 
-    }, [isSuccess, isDelSuccess, navigate])
+    }, [isDelSuccess, navigate])
 
     const onTitleChanged = e => setTitle(e.target.value)
     const onTextChanged = e => setText(e.target.value)
     const onCompletedChanged = e => setCompleted(prev => !prev)
     const onUserIdChanged = e => setUserId(e.target.value)
-
-    const canSave = [title, text, userId].every(Boolean) && !isLoading
-
-    const onSaveNoteClicked = async (e) => {
-        if (canSave) {
-            await updateNote({ id: note.id, user: userId, title, text, completed })
-        }
-    }
 
     const onDeleteNoteClicked = async () => {
         await deleteNote({ id: note.id })
@@ -68,11 +53,11 @@ const EditNoteForm = ({ note, users }) => {
         )
     })
 
-    const errClass = (isError || isDelError) ? "errmsg" : "offscreen"
+    const errClass = (isDelError) ? "errmsg" : "offscreen"
     const validTitleClass = !title ? "form__input--incomplete" : ''
     const validTextClass = !text ? "form__input--incomplete" : ''
 
-    const errContent = (error?.data?.message || delerror?.data?.message) ?? ''
+    const errContent = (delerror?.data?.message) ?? ''
 
     const content = (
         <>
@@ -82,14 +67,6 @@ const EditNoteForm = ({ note, users }) => {
                 <div className="form__title-row">
                     <h2>Edit Note #{note.ticket}</h2>
                     <div className="form__action-buttons">
-                        <button
-                            className="icon-button"
-                            title="Save"
-                            onClick={onSaveNoteClicked}
-                            disabled={!canSave}
-                        >
-                            <FontAwesomeIcon icon={faSave} />
-                        </button>
                         <button
                             className="icon-button"
                             title="Delete"
