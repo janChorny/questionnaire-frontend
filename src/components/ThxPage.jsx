@@ -2,21 +2,24 @@ import { Link } from 'react-router-dom'
 
 const ThxPage = () => {
     const content = (
-        <section className="public">
-            <main className="public__main">
-                <p>
-                  Fragenbogen erfolgreich abgeschickt.
-                  Vielen Dank für Ihre Teilnahme!
-                </p>
-                <p>
-                  Sie können jetzt diese Webseite schließen.
-                </p>
-                <button className="btn">
-                  <Link to="/notes">Results</Link>
-                </button>
-            </main>
+        <section className="thx">
+          <div className="thx__container container">
+            <div className="thx__block block">
+              <p className="thx__paragraph paragraph">
+                Fragenbogen erfolgreich abgeschickt.
+              </p>
+              <p className="thx__paragraph paragraph paragraph--bold">
+                Vielen Dank für Ihre Teilnahme!
+              </p>
+              <p className="thx__paragraph paragraph">
+                Sie können jetzt diese Webseite schließen.
+              </p>
+              <button className="btn">
+                <Link to="/notes">Results</Link>
+              </button>
+            </div>
+          </div>
         </section>
-
     )
     return content
 }
