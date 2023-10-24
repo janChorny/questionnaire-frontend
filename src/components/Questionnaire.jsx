@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { useAddNewNoteMutation } from "../features/notes/notesApiSlice"
+import { useAddNewNoteMutation } from '../features/notes/notesApiSlice';
 
 const Questionnaire = () => {
-    const [addNewNote] = useAddNewNoteMutation()
-    const userId = "6534300d61a72ae78c315321";
-    const navigate = useNavigate()
+    const [addNewNote] = useAddNewNoteMutation();
+    const userId = '6534300d61a72ae78c315321';
+    const navigate = useNavigate();
 
     const {
     register,
@@ -20,27 +20,27 @@ const Questionnaire = () => {
   const onSubmit = (data) => {
     setStatusValid(true);
     console.log(data)
-    addNewNote(
-        { user: userId, 
-          patientOneStomata: data.patientOneStomata, 
-          patientTwoStomata: data.patientTwoStomata, 
-          patientThreeStomata: data.patientThreeStomata, 
-          patientFourStomata: data.patientFourStomata, 
-          patientFiveStomata: data.patientFiveStomata, 
-          stomataQuality: data.stomataQuality,
-          stomataEasyHard: data.stomataEasyHard,
-          stomataEssentialTime: data.stomataEssentialTime,
-          stomataEssentialBegin: data.stomataEssentialBegin,
-          stomataEssentialQuantity: data.stomataEssentialQuantity,
-          stomataEssentialRepeat: data.stomataEssentialRepeat,
-          needMarkInclude: data.needMarkInclude,
-          stomataOccupation: data.stomataOccupation,
-          stomataPlaceOccupation: data.stomataPlaceOccupation,
-          stomataHalfTimeOccupation: data.stomataHalfTimeOccupation,
-          yourName: data.yourName, 
-          completed: true  
-        }
-      )
+    // addNewNote(
+    //     { user: userId, 
+    //       patientOneStomata: data.patientOneStomata, 
+    //       patientTwoStomata: data.patientTwoStomata, 
+    //       patientThreeStomata: data.patientThreeStomata, 
+    //       patientFourStomata: data.patientFourStomata, 
+    //       patientFiveStomata: data.patientFiveStomata, 
+    //       stomataQuality: data.stomataQuality,
+    //       stomataEasyHard: data.stomataEasyHard,
+    //       stomataEssentialTime: data.stomataEssentialTime,
+    //       stomataEssentialBegin: data.stomataEssentialBegin,
+    //       stomataEssentialQuantity: data.stomataEssentialQuantity,
+    //       stomataEssentialRepeat: data.stomataEssentialRepeat,
+    //       needMarkInclude: data.needMarkInclude,
+    //       stomataOccupation: data.stomataOccupation,
+    //       stomataPlaceOccupation: data.stomataPlaceOccupation,
+    //       stomataHalfTimeOccupation: data.stomataHalfTimeOccupation,
+    //       yourName: data.yourName, 
+    //       completed: true  
+    //     }
+    //   )
     reset();
     setTimeout(() => {
       setStatusValid(false);
@@ -358,7 +358,7 @@ const Questionnaire = () => {
                         />
                         so spät wie möglich, aber vor der Entlassung
                       </label>                     
-                      {errors.stomataEssentialBegin && <span className="form__payment--span error-span">Error. Select any option</span>}
+                      {errors.stomataEssentialBegin && <span className="form__error-span">Error. Select any option</span>}
                     </div>
 
                     <div className="form__block">
@@ -385,7 +385,7 @@ const Questionnaire = () => {
                         />
                         Wiederholung erforderlich
                       </label>                 
-                      {errors.stomataEssentialQuantity && <span className="form__payment--span error-span">Error. Select any option</span>}
+                      {errors.stomataEssentialQuantity && <span className="form__error-span">Error. Select any option</span>}
                     </div>
 
                     <div className="form__block">
@@ -432,7 +432,7 @@ const Questionnaire = () => {
                         {...register("stomataEssentialRepeat", { required: true })}
                         autoComplete="off"
                       />                 
-                      {errors.stomataEssentialRepeat && <span className="form__payment--span error-span">Error. Select any option</span>}
+                      {errors.stomataEssentialRepeat && <span className="form__error-span">Error. Select any option</span>}
                     </div>
 
                   </div>
@@ -586,7 +586,7 @@ const Questionnaire = () => {
                       {...register("yourName", { required: true })}
                       autoComplete="off"
                     />
-                    {errors.yourName && <span className="form__title--span error-span">Error! Min 4 letters</span>}
+                    {errors.yourName && <span className="form__error-span">Mindestens drei Buchstaben</span>}
                   </div>
 
                   <button className="form__button" type="submit">
@@ -601,7 +601,7 @@ const Questionnaire = () => {
             </main>
         </section>
 
-    )
+    );
     return content
 }
-export default Questionnaire
+export default Questionnaire;

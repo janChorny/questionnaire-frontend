@@ -1,0 +1,15 @@
+:root {
+  --dark:#1D1D1D;
+  --dark-two:#1E1E1E;
+  --main-bg: #FFFFFF;
+  --grey-two: #2F2F2F;
+  --dark-blue: #495E85;
+  --white: #FBF7F4;
+  --grey: #6A6867;
+  --dark-orange: #F9BD8D;
+  --dark-mint: #A5BDC7;
+  --dark-pink: #F98D8D;
+  --pop-up-bg: rgba(29, 29, 29, 0.8);
+  --dark-orange-features: rgba(249, 189, 141, 0.2);
+  --dark-blue-features: rgba(73, 94, 133, 0.2);
+}
