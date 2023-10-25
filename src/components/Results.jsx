@@ -30,9 +30,13 @@ const ResultsList = () => {
             : null
 
         content = (
-            <div>
-                {tableContent}
-            </div>
+            <>
+              <div className="results__container container">
+                <div className="results__block block">
+                  {tableContent}
+                </div>
+              </div>
+            </>
         )
     }
 

@@ -13,10 +13,10 @@ const Result= ({ noteId, index }) => {
 
         return (
             <div className="result">
-              <h3>{index + 1}</h3>
-              <div className="result__container">
+              <h3 className="result__blank-number">{index + 1}</h3>
+              <div className="result__block block">
                 <h4>1. Bewerten Sie bitte die Stomata mit Note A, B oder C:</h4>
-                <div className="result__block">
+                <div className="result__group">
                     <p className="result__question">
                       Patient 1: 
                     </p>
@@ -49,7 +49,7 @@ const Result= ({ noteId, index }) => {
                     </div>
                 </div>
                 <h4>2. Bewerten Sie bitte die Durchführbarkeit der Bewertung:</h4>
-                <div className="result__block">
+                <div className="result__group">
                   <h5 className="form__block-title">
                       a. Ist die Bewertung der Stomaqualität Ihrer Meinung nach sinnvoll?
                   </h5>
@@ -70,7 +70,7 @@ const Result= ({ noteId, index }) => {
                   </div>
                 </div>
                 <h4>3. Zeitpunkt der Bewertung?</h4>
-                <div className="result__block">
+                <div className="result__group">
                   <h5 className="form__block-title">
                       a. Wann ist die Bewertung des Stomas Ihrer Meinung nach sinnvoll?
                   </h5>
@@ -91,13 +91,13 @@ const Result= ({ noteId, index }) => {
                   </div>
                 </div>
                 <h4>4. Halten sie die Miteinbeziehung der „präoperativen Markierung“ als morphologischer Parameter in den Score für sinnvoll?</h4>
-                <div className="result__block">
+                <div className="result__group">
                   <div className="result__answer">
                     {note.needMarkInclude}
                   </div>
                 </div>
                 <h4>5. Geben Sie bitte nähere Information bzgl. Ihrer Tätigkeit als Stomatherapeutin, -therapeut:</h4>
-                <div className="result__block">
+                <div className="result__group">
                   <p className="result__question">
                     a. Ist die Versorgung der Stomata Ihre Haupt- oder Nebentätigkeit?
                   </p>

@@ -91,3 +91,30 @@ select {
   border: 1px solid var(--grey);
   border-radius: 4px;
 }
+
+.result {
+  border: 1px solid var(--grey);
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.result__block h4 {
+  font-weight: 700;
+}
+
+.result__answer {
+  color: red;
+}
+
+.result__blank-number {
+  font-size: 20px;
+  font-weight: 700;
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--dark);
+  border-radius: 100%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
