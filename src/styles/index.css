@@ -79,8 +79,15 @@
 .form__button:hover {
   color: var(--dark-orange);
   background-color: var(--white);
-  border: 1px solid var(--dark-orange)
+  border: 1px solid var(--dark-orange);
+  cursor: pointer;
 }
 .form__message-span {
   color: green;
+}
+
+input[type=text],
+select {
+  border: 1px solid var(--grey);
+  border-radius: 4px;
 }
