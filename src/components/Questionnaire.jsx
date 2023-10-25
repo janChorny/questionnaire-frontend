@@ -45,7 +45,7 @@ const Questionnaire = () => {
     setTimeout(() => {
       setStatusValid(false);
     }, 3000);
-    navigate(`/thxPage`)
+    navigate(`/thxpage`)
   };
 
     const content = (
