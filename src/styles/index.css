@@ -1,9 +1,10 @@
+@import './utils/loader.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto&display=swap');
 @import './base/normalize.css';
 @import './base/variables.css';
 @import './base/general.css';
 
-.header__block {
+.header__block { 
   display: flex;
   align-items: center;
   justify-content: space-between;
