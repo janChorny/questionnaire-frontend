@@ -9,7 +9,7 @@ const Instructions = () => {
               <p className="instructions__paragraph paragraph">
                 Drucken Sie bitte die Bewertungstabelle mit Parameter 
                 und die Beschreibung der Parameter aus. 
-                Tabelle und Parameterbeschreibung öffnen und ausdrucken
+                <a href="https://monashdoctors.org/wp-content/uploads/2020/12/Intern-Curriculum-2021.pdf" target="_blank" rel="noreferrer">Tabelle und Parameterbeschreibung öffnen und ausdrucken</a>
               </p>
               <p className="instructions__paragraph paragraph">
                 Lesen Sie bitte die Tabelle und die Parameterbeschreibung.
@@ -21,6 +21,11 @@ const Instructions = () => {
                 Für die Messung des Außendurchmesser benutzen Sie das Bild “Abdomenübersicht”. 
                 Anhand der Zentimeterskala berechnen Sie den Stomadurchmesser (z.B. können Sie ein Blatt Papier nehmen und Stomadurchmesser am Bildschirm (am Blatt) markieren und dann diese Strecke an der Skala in eine Zentimeterzahl umwandeln).
               </p>
+              <div className="instructions__images">
+                <img src="instructions_picture--one.png" alt="Stomata img" className="instructions__picture" width="200" height="150" />
+                <img src="instructions_picture--two.png" alt="Stomata img" className="instructions__picture" width="200" height="150" />
+                <img src="instructions_picture--three.png" alt="Stomata img" className="instructions__picture" width="200" height="150" />
+              </div>
               <p className="instructions__paragraph paragraph">
                 Haben Sie die Anweisung verstanden und die Tabelle mit den Parameterbeschreibung ausgedruckt?
                 Falls ja, klicken Sie bitte “Weiter” an. Schauen Sie auf die Uhr und vermerken Sie, wie viel Zeit die Stomabewertung 

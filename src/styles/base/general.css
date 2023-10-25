@@ -28,8 +28,7 @@ h6 {
 	font-size: inherit;
 }
 html,
-body,
-#root {
+body {
 	height: 100%;
 	line-height: 1;
 	background: var(--main-bg);
@@ -59,11 +58,6 @@ body,
 
 ::placeholder { /* Most modern browsers support this now. */
     color:    var(--grey);
-}
-
-
-body.overflow {
-	overflow: hidden;
 }
 
 .wrapper {
