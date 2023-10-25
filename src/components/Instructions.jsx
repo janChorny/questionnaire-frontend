@@ -38,7 +38,7 @@ const Instructions = () => {
                   <Link to="/public">Zurück</Link>
                 </button>
                 <button className="instructions__button btn">
-                  <Link to="/questionnaire">Bewertung beginnen</Link>
+                  <Link to="/patient-one">Bewertung beginnen</Link>
                 </button>
               </div>
             </div>

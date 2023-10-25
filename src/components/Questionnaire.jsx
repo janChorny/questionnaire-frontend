@@ -616,7 +616,7 @@ const Questionnaire = () => {
                 </form>
 
                 <button className="btn">
-                  <Link to="/instructions">Zurück</Link>
+                  <Link to="/patient-five">Zurück</Link>
                 </button>
             </div>
           </div>

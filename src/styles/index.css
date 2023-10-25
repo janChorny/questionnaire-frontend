@@ -139,3 +139,13 @@ select {
   gap: 20px;
   flex-wrap: wrap;
 }
+
+.patient__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.patient__button {
+  margin: 10px;
+}
