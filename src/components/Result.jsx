@@ -1,15 +1,33 @@
 /* eslint-disable react/prop-types */
-import { useSelector } from 'react-redux'
-import { selectNoteById } from '../features/notes/notesApiSlice'
+import { useEffect } from "react";
+import { useSelector } from 'react-redux';
+import { selectNoteById } from '../features/notes/notesApiSlice';
+import { useDeleteNoteMutation } from '../features/notes/notesApiSlice';
+import { useNavigate } from "react-router-dom";
 
 const Result= ({ noteId, index }) => {
+
+    const [deleteNote, {
+        isSuccess: isDelSuccess
+    }] = useDeleteNoteMutation();
+
+    const navigate = useNavigate();
+
+    const onDeleteNoteClicked = async () => {
+        await deleteNote({ id: noteId })
+    };
+
+    useEffect(() => {
+
+        if (isDelSuccess) {
+            navigate('/notes')
+        }
+
+    }, [ isDelSuccess, navigate])
 
     const note = useSelector(state => selectNoteById(state, noteId))
 
     if (note) {
-        const created = new Date(note.createdAt).toLocaleString('en-US', { day: 'numeric', month: 'long' })
-
-        const updated = new Date(note.updatedAt).toLocaleString('en-US', { day: 'numeric', month: 'long' })
 
         return (
             <div className="result">
@@ -122,6 +140,11 @@ const Result= ({ noteId, index }) => {
                     {note.yourName}
                 </div>
               </div>
+              <button
+              onClick={onDeleteNoteClicked}
+              className="result__button btn">
+                DELETE
+                </button>
             </div>
         )
 
