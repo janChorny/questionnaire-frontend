@@ -6,7 +6,7 @@ const PatientOne = () => {
           <div className="patient__container container">
             <div className="patient__block block">
               <h2 className="patient__title title">Patientin 1/5 (endständiges Colostoma) - benutzen Sie Tabelle 3 für die Bewertung:</h2>
-              <p className="patient__paragraph paragraph">
+              <p className="patient__paragraph paragraph marked">
                 präoperativ markiert
               </p>
               <p className="patient__paragraph paragraph">

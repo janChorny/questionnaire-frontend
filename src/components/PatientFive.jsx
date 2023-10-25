@@ -5,8 +5,8 @@ const PatientFive = () => {
         <section className="patient">
           <div className="patient__container container">
             <div className="patient__block block">
-              <h2 className="patient__title title">Patientin 5/5 (endständiges Colostoma) - benutzen Sie Tabelle 3 für die Bewertung:</h2>
-              <p className="patient__paragraph paragraph">
+              <h2 className="patient__title title">Patient 5/5 (endständiges Colostoma) - benutzen Sie Tabelle 3 für die Bewertung:</h2>
+              <p className="patient__paragraph paragraph marked">
                 präoperativ markiert
               </p>
               <p className="patient__paragraph paragraph">

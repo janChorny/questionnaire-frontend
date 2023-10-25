@@ -9,13 +9,13 @@ const Instructions = () => {
               <p className="instructions__paragraph paragraph">
                 Drucken Sie bitte die Bewertungstabelle mit Parameter 
                 und die Beschreibung der Parameter aus. 
-                <a href="https://monashdoctors.org/wp-content/uploads/2020/12/Intern-Curriculum-2021.pdf" target="_blank" rel="noreferrer">Tabelle und Parameterbeschreibung öffnen und ausdrucken</a>
+                <a href="/OQS-Beschreibung.pdf" target="_blank" rel="noreferrer">Tabelle und Parameterbeschreibung öffnen und ausdrucken</a>
               </p>
               <p className="instructions__paragraph paragraph">
                 Lesen Sie bitte die Tabelle und die Parameterbeschreibung.
               </p>
               <p className="instructions__paragraph paragraph">
-                Wenn Sie auf “Weiter” klicken, öffnen sich die Patientenfälle mit Stomatabildern.
+                Wenn Sie auf “Weiter” klicken, öffnen sich die Patientenfälle mit Stomatabilder.
               </p>
               <p className="instructions__paragraph paragraph">
                 Für die Messung des Außendurchmesser benutzen Sie das Bild “Abdomenübersicht”. 
@@ -28,10 +28,10 @@ const Instructions = () => {
               </div>
               <p className="instructions__paragraph paragraph">
                 Haben Sie die Anweisung verstanden und die Tabelle mit den Parameterbeschreibung ausgedruckt?
-                Falls ja, klicken Sie bitte “Weiter” an. Schauen Sie auf die Uhr und vermerken Sie, wie viel Zeit die Stomabewertung 
+                Falls ja, klicken Sie bitte “Weiter” an. Schauen Sie auf die Uhr und vermerken Sie, wie viel Zeit die Stomabewertung in Anspruch nimmt. 
               </p>
               <p className="instructions__paragraph paragraph">
-                Falls nicht, schreiben Sie bitte uns die entstandene Probleme per E-Mail (mikalai.mikhalachkin@kliniken-nea.de)
+                Falls nicht, schreiben Sie bitte uns die entstandenen Probleme per E-Mail (mikalai.mikhalachkin@kliniken-nea.de)
               </p>
               <div className="instructions__buttons">
                 <button className="instructions__button btn">

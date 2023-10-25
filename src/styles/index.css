@@ -150,3 +150,8 @@ select {
 .patient__button {
   margin: 10px;
 }
+
+.marked {
+  font-weight: 700;
+  text-decoration: underline;
+}
