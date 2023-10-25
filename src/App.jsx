@@ -29,7 +29,7 @@ function App() {
           <Route path="patient-four" element={<PatientFour/>} />
           <Route path="patient-five" element={<PatientFive/>} />
           <Route path="questionnaire" element={<Questionnaire/>} />
-          <Route path="thxpage" element={<ThxPage/>} />
+          <Route path="thankspage" element={<ThxPage/>} />
           <Route element={<Prefetch />}>
               <Route path="notes">
                 <Route index element={<ResultsList />} />
