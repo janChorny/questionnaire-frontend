@@ -1,6 +1,13 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import GridLoader from 'react-spinners/PulseLoader';
 
 const Instructions = () => {
+  const [imgLoaded, setImgLoaded] = useState(false);
+    const onImgLoadedSet = () =>{
+      setImgLoaded(true);
+    }
+
     const content = (
         <section className="instructions">
           <div className="instructions__container container">
@@ -22,9 +29,31 @@ const Instructions = () => {
                 Anhand der Zentimeterskala berechnen Sie den Stomadurchmesser (z.B. können Sie ein Blatt Papier nehmen und Stomadurchmesser am Bildschirm (am Blatt) markieren und dann diese Strecke an der Skala in eine Zentimeterzahl umwandeln).
               </p>
               <div className="instructions__images">
-                <img src="instructions_picture--one.webp" alt="Stomata img" className="instructions__picture" width="200" height="150" />               
-                <img src="instructions_picture--two.webp" alt="Stomata img" className="instructions__picture" width="200" height="150" />
-                <img src="instructions_picture--three.webp" alt="Stomata img" className="instructions__picture" width="200" height="150" />
+                {!imgLoaded && <GridLoader color={"#495E85"} />}
+                <img
+                  onLoad={onImgLoadedSet}  
+                  src="instructions_picture--one.webp" 
+                  alt="Stomata img" 
+                  className="instructions__picture" 
+                  width="200" 
+                  height="150" 
+                />               
+                <img
+                  onLoad={onImgLoadedSet} 
+                  src="instructions_picture--two.webp" 
+                  alt="Stomata img" 
+                  className="instructions__picture" 
+                  width="200" 
+                  height="150" 
+                />
+                <img
+                  onLoad={onImgLoadedSet}  
+                  src="instructions_picture--three.webp" 
+                  alt="Stomata img" 
+                  className="instructions__picture" 
+                  width="200" 
+                  height="150" 
+                />
               </div>
               <p className="instructions__paragraph paragraph">
                 Haben Sie die Anweisung verstanden und die Tabelle mit den Parameterbeschreibung ausgedruckt?

@@ -1,6 +1,13 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import PulseLoader from 'react-spinners/PulseLoader';
 
 const PatientTwo = () => {
+  const [imgLoaded, setImgLoaded] = useState(false);
+    const onImgLoadedSet = () =>{
+      setImgLoaded(true);
+    }
+
     const content = (
         <section className="patient">
           <div className="patient__container container">
@@ -12,19 +19,59 @@ const PatientTwo = () => {
               <p className="patient__paragraph paragraph">
                 Ansicht von oben (gesamte Abdomen):
               </p>
-              <img src="patient-two--one.webp" alt="Patient two stoma first picture" className="patient__picture" />
+              <div>
+                {!imgLoaded && <PulseLoader color={"#495E85"} />}
+                <img 
+                  src="patient-two--one.webp" 
+                  onLoad={onImgLoadedSet} 
+                  alt="Patient two stoma first picture" 
+                  className="patient__picture"
+                  width="758"
+                  height="1010.67" 
+                />
+              </div>
               <p className="patient__paragraph paragraph">
                 Ansicht von oben (Stoma):
               </p>
-              <img src="patient-two--two.webp" alt="Patient two stoma second picture" className="patient__picture" />
+              <div>
+                {!imgLoaded && <PulseLoader color={"#495E85"} />}
+                <img 
+                  src="patient-two--two.webp" 
+                  onLoad={onImgLoadedSet} 
+                  alt="Patient two stoma second picture" 
+                  className="patient__picture"
+                  width="758"
+                  height="1012.02" 
+                />
+              </div>
               <p className="patient__paragraph paragraph">
                 Ansicht seitlich (von der Seite des Stomas):
               </p>
-              <img src="patient-two--three.webp" alt="Patient two stoma third picture" className="patient__picture" />
+              <div>
+                {!imgLoaded && <PulseLoader color={"#495E85"} />}
+                <img 
+                  src="patient-two--three.webp" 
+                  onLoad={onImgLoadedSet} 
+                  alt="Patient two stoma third picture" 
+                  className="patient__picture"
+                  width="758"
+                  height="568.93"
+                />
+              </div>
               <p className="patient__paragraph paragraph">
                 Ansicht zwischen den Beinen Richtung Stoma:
               </p>
-              <img src="patient-two--four.webp" alt="Patient two stoma fourth picture" className="patient__picture" />
+              <div>
+                {!imgLoaded && <PulseLoader color={"#495E85"} />}
+                <img 
+                  src="patient-two--four.webp" 
+                  onLoad={onImgLoadedSet} 
+                  alt="Patient two stoma fourth picture" 
+                  className="patient__picture"
+                  width="758"
+                  height="568.94"
+                />
+              </div>
               <p className="patient__paragraph paragraph">
                 Geben Sie bitte dem Stoma 2 eine Note anhand der ausgedruckten Tabelle und vermerken Sie diese.
               </p>

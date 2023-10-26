@@ -1,7 +1,13 @@
-import { Suspense } from 'react';
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import PulseLoader from 'react-spinners/PulseLoader';
 
 const PatientOne = () => {
+    const [imgLoaded, setImgLoaded] = useState(false);
+    const onImgLoadedSet = () =>{
+      setImgLoaded(true);
+    }
+
     const content = (
         <section className="patient">
           <div className="patient__container container">
@@ -13,27 +19,59 @@ const PatientOne = () => {
               <p className="patient__paragraph paragraph">
                 Ansicht von oben (gesamte Abdomen):
               </p>
-              <Suspense fallback={<div>Loading...</div>}>
-                <img src="patient-one--one.webp" alt="Patient one stoma first picture" className="patient__picture" />
-              </Suspense>
+              <div>
+                {!imgLoaded && <PulseLoader color={"#495E85"} />}
+                <img 
+                  src="patient-one--one.webp" 
+                  onLoad={onImgLoadedSet} 
+                  alt="Patient one stoma first picture" 
+                  className="patient__picture"
+                  width="758"
+                  height="1010.67" 
+                />
+              </div>
               <p className="patient__paragraph paragraph">
                 Ansicht von oben (Stoma):
               </p>
-              <Suspense fallback={<div>Loading...</div>}>
-                <img src="patient-one--two.webp" alt="Patient one stoma second picture" className="patient__picture" />
-              </Suspense>
+              <div>
+                {!imgLoaded && <PulseLoader color={"#495E85"} />}
+                <img 
+                  src="patient-one--two.webp" 
+                  onLoad={onImgLoadedSet} 
+                  alt="Patient one stoma second picture" 
+                  className="patient__picture"
+                  width="758"
+                  height="1012.02"
+                />
+              </div>
               <p className="patient__paragraph paragraph">
                 Ansicht seitlich (von der Seite des Stomas):
               </p>
-              <Suspense fallback={<div>Loading...</div>}>
-                <img src="patient-one--three.webp" alt="Patient one stoma third picture" className="patient__picture" />
-              </Suspense>
+              <div>
+                {!imgLoaded && <PulseLoader color={"#495E85"} />}
+                <img 
+                  src="patient-one--three.webp" 
+                  onLoad={onImgLoadedSet} 
+                  alt="Patient one stoma third picture" 
+                  className="patient__picture"
+                  width="758"
+                  height="568.93" 
+                />
+              </div>           
               <p className="patient__paragraph paragraph">
                 Ansicht zwischen den Beinen Richtung Stoma:
               </p>
-              <Suspense fallback={<div>Loading...</div>}>
-                <img src="patient-one--four.webp" alt="Patient one stoma fourth picture" className="patient__picture" />
-              </Suspense>
+              <div>
+                {!imgLoaded && <PulseLoader color={"#495E85"} />}
+                <img 
+                  src="patient-one--four.webp" 
+                  onLoad={onImgLoadedSet} 
+                  alt="Patient one stoma fourth picture" 
+                  className="patient__picture"
+                  width="758"
+                  height="568.94"
+                />
+              </div>
               <p className="patient__paragraph paragraph">
                 Geben Sie bitte dem Stoma 1 eine Note anhand der ausgedruckten Tabelle und vermerken Sie diese.
               </p>
