@@ -22,9 +22,9 @@ const Instructions = () => {
                 Anhand der Zentimeterskala berechnen Sie den Stomadurchmesser (z.B. können Sie ein Blatt Papier nehmen und Stomadurchmesser am Bildschirm (am Blatt) markieren und dann diese Strecke an der Skala in eine Zentimeterzahl umwandeln).
               </p>
               <div className="instructions__images">
-                <img src="instructions_picture--one.webp" decoding="async" alt="Stomata img" className="instructions__picture" width="200" height="150" />               
-                <img src="instructions_picture--two.webp" decoding="async" alt="Stomata img" className="instructions__picture" width="200" height="150" />
-                <img src="instructions_picture--three.webp" decoding="async" alt="Stomata img" className="instructions__picture" width="200" height="150" />
+                <img src="instructions_picture--one.webp" alt="Stomata img" className="instructions__picture" width="200" height="150" />               
+                <img src="instructions_picture--two.webp" alt="Stomata img" className="instructions__picture" width="200" height="150" />
+                <img src="instructions_picture--three.webp" alt="Stomata img" className="instructions__picture" width="200" height="150" />
               </div>
               <p className="instructions__paragraph paragraph">
                 Haben Sie die Anweisung verstanden und die Tabelle mit den Parameterbeschreibung ausgedruckt?
