@@ -2,6 +2,7 @@ import React, {Suspense, lazy} from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Prefetch from './features/auth/Prefetch'
 import ResultsList from './components/Results';
+import NotFoundPage from './components/NotFoundPage';
 const Layout= lazy(() => import('./components/Layout'));
 const Public = lazy(() => import('./components/Public'));
 const Login = lazy(() => import('./features/auth/Login'));
@@ -35,7 +36,7 @@ function App() {
                 <Route index element={<ResultsList />} />
               </Route>
           </Route>
-  
+          <Route path="*" element={<NotFoundPage/>} />
         </Route>
       </Routes>
     </Suspense>

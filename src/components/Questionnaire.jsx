@@ -51,7 +51,7 @@ const Questionnaire = () => {
         <section className="questionnaire">
           <div className="questionnaire__container container">
             <div className="questionnaire__block block">
-              <h2 className="questionnaire__title title">Questionnaire</h2>
+              <h2 className="questionnaire__title title">Fragebogen</h2>
                 <form className="form" onSubmit={handleSubmit(onSubmit)}>
 
                   <div className="form__question">
@@ -611,7 +611,7 @@ const Questionnaire = () => {
                   <button className="form__button btn" type="submit">
                     Fragebogen abschicken
                   </button>
-                  {statusValid && <span className="form__message-span">Verschickt</span>}
+                  {statusValid && <span className="form__message-span">Warten Sie einbisschen! Das Fragebogen wird verschickt</span>}
                 </form>
 
                 <button className="btn">
