@@ -17,10 +17,9 @@ const Questionnaire = () => {
 
   const [statusValid, setStatusValid] = React.useState(false);
 
-  const onSubmit = (data) => {
+  const onSubmit = async ( data) => {
     setStatusValid(true);
-    // console.log(data)
-    addNewNote(
+    await addNewNote(
         { user: userId, 
           patientOneStomata: data.patientOneStomata, 
           patientTwoStomata: data.patientTwoStomata, 
@@ -67,7 +66,7 @@ const Questionnaire = () => {
                         {...register("patientOneStomata", { required: true })}
                         defaultValue=""
                       >
-                        <option className="select-option" disabled></option>
+                        <option className="select-option" disabled hidden></option>
                         <option className="select-option" value="A">A</option>
                         <option className="select-option" value="B">B</option>
                         <option className="select-option" value="C">C</option>
@@ -84,7 +83,7 @@ const Questionnaire = () => {
                         {...register("patientTwoStomata", { required: true })}
                         defaultValue=""
                       >
-                        <option className="select-option" disabled></option>
+                        <option className="select-option" disabled hidden></option>
                         <option className="select-option" value="A">A</option>
                         <option className="select-option" value="B">B</option>
                         <option className="select-option" value="C">C</option>
@@ -101,7 +100,7 @@ const Questionnaire = () => {
                         {...register("patientThreeStomata", { required: true })}
                         defaultValue=""
                       >
-                        <option className="select-option" disabled></option>
+                        <option className="select-option" hidden></option>
                         <option className="select-option" value="A">A</option>
                         <option className="select-option" value="B">B</option>
                         <option className="select-option" value="C">C</option>
@@ -118,7 +117,7 @@ const Questionnaire = () => {
                         {...register("patientFourStomata", { required: true })}
                         defaultValue=""
                       >
-                        <option className="select-option" disabled></option>
+                        <option className="select-option" disabled hidden></option>
                         <option className="select-option" value="A">A</option>
                         <option className="select-option" value="B">B</option>
                         <option className="select-option" value="C">C</option>
@@ -135,7 +134,7 @@ const Questionnaire = () => {
                         {...register("patientFiveStomata", { required: true })}
                         defaultValue=""
                       >
-                        <option className="select-option" disabled></option>
+                        <option className="select-option" disabled hidden></option>
                         <option className="select-option" value="A">A</option>
                         <option className="select-option" value="B">B</option>
                         <option className="select-option" value="C">C</option>

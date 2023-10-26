@@ -12,19 +12,19 @@ const PatientFour = () => {
               <p className="patient__paragraph paragraph">
                 Ansicht von oben (gesamte Abdomen):
               </p>
-              <img src="patient-four--one.png" alt="Patient four stoma first picture" className="patient__picture" />
+              <img src="patient-four--one.webp" decoding="async" alt="Patient four stoma first picture" className="patient__picture" />
               <p className="patient__paragraph paragraph">
                 Ansicht von oben (Stoma):
               </p>
-              <img src="patient-four--two.png" alt="Patient four stoma second picture" className="patient__picture" />
+              <img src="patient-four--two.webp" decoding="async" alt="Patient four stoma second picture" className="patient__picture" />
               <p className="patient__paragraph paragraph">
                 Ansicht seitlich (von der Seite des Stomas):
               </p>
-              <img src="patient-four--three.png" alt="Patient four stoma third picture" className="patient__picture" />
+              <img src="patient-four--three.webp" decoding="async" alt="Patient four stoma third picture" className="patient__picture" />
               <p className="patient__paragraph paragraph">
                 Ansicht zwischen den Beinen Richtung Stoma:
               </p>
-              <img src="patient-four--four.png" alt="Patient four stoma fourth picture" className="patient__picture" />
+              <img src="patient-four--four.webp" decoding="async" alt="Patient four stoma fourth picture" className="patient__picture" />
               <p className="patient__paragraph paragraph">
                 Geben Sie bitte dem Stoma 4 eine Note anhand der ausgedruckten Tabelle und vermerken Sie diese.
               </p>
