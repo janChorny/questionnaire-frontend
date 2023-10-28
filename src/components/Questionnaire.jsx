@@ -1,23 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useAddNewNoteMutation } from '../features/notes/notesApiSlice';
+import { ErrorMessage } from "@hookform/error-message"
 
 const Questionnaire = () => {
     const [addNewNote] = useAddNewNoteMutation();
     const userId = '6534300d61a72ae78c315321';
     const navigate = useNavigate();
+    const [otherSelected, setOtherSelected] = useState(false)
+    const [inputSelected, setInputSelected] = useState(false)
+
+    const onRegularChange = () => {
+      setOtherSelected(false)
+      resetField("stomataEssentialRepeatYourValue")
+    }
+
+    const onRegularInputChange = () => {
+      setInputSelected(false)
+      resetField("needMarkIncludeValue")
+    }
+
+    const onOtherSelect = () => {
+      setOtherSelected(true)
+      resetField("stomataEssentialRepeat")
+    }
+
+    const onOtherInputSelect = () => {
+      setInputSelected(true)
+      resetField("needMarkInclude")
+    }
 
     const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    resetField,
   } = useForm({ reValidateMode: 'onSubmit' });
 
   const [statusValid, setStatusValid] = React.useState(false);
 
+
   const onSubmit = async ( data) => {
+    const repeatValue = data.stomataEssentialRepeat ? data.stomataEssentialRepeat : data.stomataEssentialRepeatYourValue;
+    const needMark = data.needMarkInclude ? data.needMarkInclude : data.needMarkIncludeValue;
     setStatusValid(true);
     await addNewNote(
         { user: userId, 
@@ -31,8 +58,8 @@ const Questionnaire = () => {
           stomataEssentialTime: data.stomataEssentialTime,
           stomataEssentialBegin: data.stomataEssentialBegin,
           stomataEssentialQuantity: data.stomataEssentialQuantity,
-          stomataEssentialRepeat: data.stomataEssentialRepeat,
-          needMarkInclude: data.needMarkInclude,
+          stomataEssentialRepeat: repeatValue,
+          needMarkInclude: needMark,
           stomataOccupation: data.stomataOccupation,
           stomataPlaceOccupation: data.stomataPlaceOccupation,
           stomataHalfTimeOccupation: data.stomataHalfTimeOccupation,
@@ -409,7 +436,7 @@ const Questionnaire = () => {
                             type="radio"
                             id="ZweiWochenPostoperativ"
                             value="2 Wochen postoperativ"
-                            {...register("stomataEssentialRepeat", { required: true })}
+                            {...register("stomataEssentialRepeat", { required: !otherSelected, onChange: onRegularChange})}
                           />
                           2 Wochen postoperativ
                         </label>                 
@@ -419,7 +446,7 @@ const Questionnaire = () => {
                             type="radio"
                             id="DreiWochenPostoperativ"
                             value="3 Wochen postoperativ"
-                            {...register("stomataEssentialRepeat", { required: true })}
+                            {...register("stomataEssentialRepeat", { required: !otherSelected, onChange: onRegularChange })}
                           />
                           3 Wochen postoperativ
                         </label>                 
@@ -429,20 +456,41 @@ const Questionnaire = () => {
                             type="radio"
                             id="VierWochenPostoperativ"
                             value="4 Wochen postoperativ"
-                            {...register("stomataEssentialRepeat", { required: true })}
+                            {...register("stomataEssentialRepeat", { required: !otherSelected, onChange: onRegularChange })}
                           />
                           4 Wochen postoperativ
                         </label>
-                        <label className="form__label" htmlFor="stomataEssentialRepeatCustom">
-                          Sonstiges:
-                        </label>
-                        <input
-                          className="form__input"
-                          type="text"
-                          id="stomataEssentialRepeatCustom"
-                          {...register("stomataEssentialRepeat", { required: true })}
-                          autoComplete="off"
-                        />                 
+                        <div className="form-input form-input--your-value">
+                          <label className="form__label" htmlFor="SonstigesWochenPostoperativ">
+                            <input
+                              className="form__input"
+                              type="radio"
+                              id="SonstigesWochenPostoperativ"
+                              checked={otherSelected}
+                              onChange={onOtherSelect}
+                              name="stomataEssentialRepeat"
+                            />
+                            Sonstiges:
+                          </label>
+                          <label className="form__label" htmlFor="stomataEssentialRepeatCustom">
+                          </label>
+                          <input
+                            className="form__input"
+                            type="text"
+                            id="stomataEssentialRepeatCustom"
+                            disabled={!otherSelected}
+                            {...register('stomataEssentialRepeatYourValue', {
+                              required: { value: otherSelected, message: 'Schreiben Sie eine benutzerdefinierte Option' },
+                              minLength: { value: 3, message: 'zu kurz, mindestens drei Buchstaben' },
+                            })}
+                            autoComplete="off"
+                          />
+                          <ErrorMessage
+                            errors={errors}
+                            name="stomataEssentialRepeatYourValue"
+                            render={({ message }) => <p style={{color: "red"}}>{message}</p>}
+                          />
+                        </div>
                         {errors.stomataEssentialRepeat && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                       </div>
                     </div>
@@ -461,30 +509,43 @@ const Questionnaire = () => {
                             type="radio"
                             id="JaMarkierung"
                             value="Ja"
-                            {...register("needMarkInclude", { required: true })}
+                            {...register("needMarkInclude", { required: !inputSelected, onChange: onRegularInputChange })}
                           />
                           Ja
-                        </label>                              
-                        <label className="form__label" htmlFor="NeinMarkierung">
+                        </label>
+                        <div className="form-input form-input--your-value">
+                          <label className="form__label" htmlFor="NeinMarkierung">
+                            <input
+                              className="form__input"
+                              type="radio"
+                              id="NeinMarkierung"
+                              checked={inputSelected}
+                              onChange={onOtherInputSelect}
+                              name="needMarkInclude"
+                            />
+                            Nein
+                          </label>
+                          <label className="form__label" htmlFor="customMarkierung">
+                            Falls nein, Warum?
+                          </label>
                           <input
                             className="form__input"
-                            type="radio"
-                            id="NeinMarkierung"
-                            value="Nein"
-                            {...register("needMarkInclude", { required: true })}
+                            type="text"
+                            id="customMarkierung"
+                            disabled={!inputSelected}
+                            {...register('needMarkIncludeValue', {
+                              required: { value: inputSelected, message: 'Schreiben Sie eine benutzerdefinierte Option' },
+                              minLength: { value: 3, message: 'zu kurz, mindestens drei Buchstaben' },
+                            })}
+                            autoComplete="off"
                           />
-                          Nein
-                        </label>
-                        <label className="form__label" htmlFor="customMarkierung">
-                          Falls nein, Warum?
-                        </label>
-                        <input
-                          className="form__input"
-                          type="text"
-                          id="customMarkierung"
-                          {...register("needMarkInclude", { required: true })}
-                          autoComplete="off"
-                        />                 
+                          <ErrorMessage
+                            errors={errors}
+                            name="needMarkIncludeValue"
+                            render={({ message }) => <p style={{color: "red"}}>{message}</p>}
+                          />
+                        </div>                              
+
                         {errors.needMarkInclude && <span className="form__error-span">Bitte, wählen Sie eine Antwortoption aus</span>}
                       </div>
                     </div>
@@ -602,9 +663,14 @@ const Questionnaire = () => {
                       className="form__input"
                       type="text"
                       id="formAnketaName"
-                      {...register("yourName", { required: true })}
+                      {...register("yourName", { required: true, minLength: { value: 2, message: 'zu kurz, mindestens zwei Buchstaben' }, })}
                       autoComplete="off"
                     />
+                    <ErrorMessage
+                            errors={errors}
+                            name="yourName"
+                            render={({ message }) => <p style={{color: "red"}}>{message}</p>}
+                          />
                     {errors.yourName && <span className="form__error-span">Mindestens drei Buchstaben</span>}
                   </div>
 
