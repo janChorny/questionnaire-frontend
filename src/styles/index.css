@@ -173,3 +173,9 @@ select {
   gap: 10px;
   flex-wrap: wrap;
 }
+
+.patient__picture {
+  max-width: 100%;
+  height: auto;
+}
+
