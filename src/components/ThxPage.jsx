@@ -15,7 +15,7 @@ const ThxPage = () => {
                 Sie können jetzt diese Webseite schließen.
               </p>
               <button className="btn">
-                <Link to="/notes">Results</Link>
+                <Link to="/login">Results</Link>
               </button>
             </div>
           </div>

@@ -1,6 +1,37 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
+import { useSendLogoutMutation } from '../features/auth/authApiSlice';
 
 const Header = () => {
+    const navigate = useNavigate();
+
+    const { isAdmin } = useAuth();
+
+    const [sendLogout, {
+        isLoading,
+        isSuccess,
+        isError,
+        error
+    }] = useSendLogoutMutation();
+
+    useEffect(() => {
+        if (isSuccess) navigate('/')
+    }, [isSuccess, navigate]);
+
+    if (isLoading) return <p>Ausloggen...</p>
+
+    if (isError) return <p>Fehler: {error.data?.message}</p>
+
+    const logoutButton = (
+        <button
+            className="btn btn--login"
+            title="Logout"
+            onClick={sendLogout}
+        >
+            Ausloggen
+        </button>
+    )
 
     const content = (
       <header className="header">
@@ -9,9 +40,10 @@ const Header = () => {
             <Link to="/">
               <img src="logo.png" alt="Logo" className="header__img" />
             </Link>
-            <button className="btn btn--login">
-              <Link to="/login">Admin Login</Link>
-            </button>
+            {!isAdmin && <Link to="/login"><button className="btn btn--login">Admin loggen</button></Link>}
+            <div className="header__nav">
+              {isAdmin && logoutButton}
+            </div>
           </div>         
         </div>
       </header>
@@ -19,4 +51,4 @@ const Header = () => {
 
     return content
 }
-export default Header
+export default Header;

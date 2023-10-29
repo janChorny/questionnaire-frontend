@@ -14,6 +14,9 @@ const PatientThree= lazy(() => import('./components/PatientThree'));
 const PatientFour= lazy(() => import('./components/PatientFour'));
 const PatientFive= lazy(() => import('./components/PatientFive'));
 const PatientOne= lazy(() => import('./components/PatientOne'));
+import PersistLogin from './features/auth/PersistLogin';
+import RequireAuth from './features/auth/RequireAuth'
+import { ROLES } from './config/roles'
 
 function App() {
   return (
@@ -31,10 +34,14 @@ function App() {
           <Route path="patient-five" element={<PatientFive/>} />
           <Route path="questionnaire" element={<Questionnaire/>} />
           <Route path="thankspage" element={<ThxPage/>} />
-          <Route element={<Prefetch />}>
+          <Route element={<PersistLogin />}>
+            <Route element={<Prefetch />}>
               <Route path="notes">
-                <Route index element={<ResultsList />} />
+                <Route element={<RequireAuth allowedRoles={[ROLES.Manager, ROLES.Admin]} />}>
+                  <Route index element={<ResultsList />} />
+                </Route>
               </Route>
+            </Route>
           </Route>
           <Route path="*" element={<NotFoundPage/>} />
         </Route>
