@@ -6,7 +6,9 @@ import { useSendLogoutMutation } from '../features/auth/authApiSlice';
 const Header = () => {
     const navigate = useNavigate();
 
-    const { isAdmin } = useAuth();
+    const { isAdmin, isManager } = useAuth();
+    const isAllowed = isAdmin || isManager;
+    const isNotAllowed = !isAdmin && !isManager;
 
     const [sendLogout, {
         isLoading,
@@ -40,9 +42,10 @@ const Header = () => {
             <Link to="/">
               <img src="logo.png" alt="Logo" className="header__img" />
             </Link>
-            {!isAdmin && <Link to="/login"><button className="btn btn--login">Admin loggen</button></Link>}
+            {isNotAllowed && <Link to="/login"><button className="btn btn--login">Admin loggen</button>
+            </Link>}
             <div className="header__nav">
-              {isAdmin && logoutButton}
+              {isAllowed && logoutButton}
             </div>
           </div>         
         </div>

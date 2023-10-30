@@ -4,8 +4,11 @@ import { useSelector } from 'react-redux';
 import { selectNoteById } from '../features/notes/notesApiSlice';
 import { useDeleteNoteMutation } from '../features/notes/notesApiSlice';
 import { useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const Result= ({ noteId, index }) => {
+
+    const { isAdmin } = useAuth();
 
     const [deleteNote, {
         isSuccess: isDelSuccess
@@ -140,11 +143,11 @@ const Result= ({ noteId, index }) => {
                     {note.yourName}
                 </div>
               </div>
-              <button
+              {isAdmin && <button
               onClick={onDeleteNoteClicked}
               className="result__button btn">
                 DELETE
-                </button>
+              </button>}
             </div>
         )
 
