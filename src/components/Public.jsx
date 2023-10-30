@@ -1,6 +1,13 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import GridLoader from 'react-spinners/PulseLoader';
 
 const Public = () => {
+    const [imgLoaded, setImgLoaded] = useState(false);
+    const onImgLoadedSet = () =>{
+      setImgLoaded(true);
+    }
+
     const content = (
         <section className="public">
           <div className="public__container container">
@@ -40,7 +47,28 @@ const Public = () => {
               </p>
               <p className="public__paragraph paragraph">
                 Mit freundlichen, kollegialen Grüßen aus Neustadt <br />
-                Dr. Martin Rexer und Mikalai Mikhalachkin <br />
+                Dr. Martin Rexer und Mikalai Mikhalachkin
+              </p>
+              <div className="public__img-container">
+              {!imgLoaded && <GridLoader color={"#495E85"} />}
+              <img
+                  onLoad={onImgLoadedSet}  
+                  src="Rexer.webp" 
+                  alt="Dr. Martin Rexer" 
+                  className="public__img" 
+                  width="337" 
+                  height="455"
+                />  
+              <img
+                  onLoad={onImgLoadedSet}  
+                  src="Mikalai.webp" 
+                  alt="Mikalai Mikhalachkin" 
+                  className="public__img" 
+                  width="337" 
+                  height="455" 
+                />  
+              </div>
+              <p className="public__paragraph paragraph">
                 Klinik für Allgemein-, Viszeral- und Gefäßchirurgie <br />
                 Klinikum Neustadt <br />
                 Paracelsusstr.33 <br />

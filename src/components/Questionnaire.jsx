@@ -660,12 +660,15 @@ const Questionnaire = () => {
                       Geben Sie bitte Ihren Namen ein:
                     </label>
                     <input
-                      className="form__input"
+                      className="form__input form-input--name"
                       type="text"
                       id="formAnketaName"
                       {...register("yourName", { required: true, minLength: { value: 2, message: 'zu kurz, mindestens zwei Buchstaben' }, })}
                       autoComplete="off"
                     />
+                    <p>Ihre Daten werden ausschließlich zur Bewertung der Befragungsergebnisse benutzt 
+                      und zum Beweis, dass sie (die Daten) nicht gefälscht sind.
+                    </p>
                     <ErrorMessage
                             errors={errors}
                             name="yourName"

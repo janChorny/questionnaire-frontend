@@ -16,6 +16,17 @@
   margin: 10px;
 }
 
+.public__img-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.public__img {
+  width: 200px;
+  height: auto;
+}
+
 .instructions__buttons {
   display: flex;
   justify-content: space-between;
@@ -217,7 +228,15 @@ select {
   display: flex;
   gap: 10px;
 }
-
+.form-input--name {
+  margin: 20px 0px;
+}
 .form__submit-button:hover {
   color: var(--dark-blue);
+}
+
+@media (max-width: 460px) {
+  .public__img-container {
+  justify-content: center;
+  }
 }
