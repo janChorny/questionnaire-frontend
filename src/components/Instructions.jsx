@@ -32,15 +32,15 @@ const Instructions = () => {
                 {!imgLoaded && <GridLoader color={"#495E85"} />}
                 <img
                   onLoad={onImgLoadedSet}  
-                  src="instructions_picture--one.webp" 
+                  src="close-up-hands-holding-clipboard.webp" 
                   alt="Stomata img" 
-                  className="instructions__picture" 
+                  className="instructions__picture"
                   width="200" 
                   height="150" 
                 />               
                 <img
                   onLoad={onImgLoadedSet} 
-                  src="instructions_picture--two.webp" 
+                  src="close-up-hands-holding-clipboard.webp" 
                   alt="Stomata img" 
                   className="instructions__picture" 
                   width="200" 
@@ -48,7 +48,7 @@ const Instructions = () => {
                 />
                 <img
                   onLoad={onImgLoadedSet}  
-                  src="instructions_picture--three.webp" 
+                  src="close-up-hands-holding-clipboard.webp" 
                   alt="Stomata img" 
                   className="instructions__picture" 
                   width="200" 
@@ -60,7 +60,7 @@ const Instructions = () => {
                 Falls ja, klicken Sie bitte “Weiter” an. Schauen Sie auf die Uhr und vermerken Sie, wie viel Zeit die Stomabewertung in Anspruch nimmt. 
               </p>
               <p className="instructions__paragraph paragraph">
-                Falls nicht, schreiben Sie bitte uns die entstandenen Probleme per E-Mail (mikalai.mikhalachkin@kliniken-nea.de)
+                Falls nicht, schreiben Sie bitte uns die entstandenen Probleme per E-Mail (XXX)
               </p>
               <div className="instructions__buttons">
                 <button className="instructions__button btn">

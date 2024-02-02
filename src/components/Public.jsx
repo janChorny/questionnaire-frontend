@@ -46,33 +46,33 @@ const Public = () => {
                 Wir bedanken uns ganz herzlich bei Ihnen für Ihre Teilnahme.
               </p>
               <p className="public__paragraph paragraph">
-                Mit freundlichen, kollegialen Grüßen aus Neustadt <br />
-                Dr. Martin Rexer und Mikalai Mikhalachkin
+                Mit freundlichen, kollegialen Grüßen aus XXX <br />
+                XXXX und XXX
               </p>
               <div className="public__img-container">
               {!imgLoaded && <GridLoader color={"#495E85"} />}
               <img
                   onLoad={onImgLoadedSet}  
-                  src="Rexer.webp" 
-                  alt="Dr. Martin Rexer" 
+                  src="front-view-doctor-wearing-mask.webp" 
+                  alt="Dr. One" 
                   className="public__img" 
                   width="337" 
                   height="455"
                 />  
               <img
                   onLoad={onImgLoadedSet}  
-                  src="Mikalai.webp" 
-                  alt="Mikalai Mikhalachkin" 
+                  src="medium-shot-doctor-with-gloves.jpg" 
+                  alt="Dr. Two" 
                   className="public__img" 
                   width="337" 
                   height="455" 
                 />  
               </div>
               <p className="public__paragraph paragraph">
-                Klinik für Allgemein-, Viszeral- und Gefäßchirurgie <br />
-                Klinikum Neustadt <br />
-                Paracelsusstr.33 <br />
-                91413 Neustadt an der Aisch <br />
+                Klinik XXX <br />
+                XXX XXX <br />
+                XXXXX.XX <br />
+                XXX XXXX XXXXX <br />
               </p>
               <button className="btn">
                 <Link to="/instructions">Weiter</Link>

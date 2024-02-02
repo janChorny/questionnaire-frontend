@@ -22,7 +22,7 @@ const PatientFive = () => {
               <div>
                 {!imgLoaded && <PulseLoader color={"#495E85"} />}
                 <img 
-                  src="patient-five--one.webp" 
+                  src="close-up-hands-holding-clipboard.webp" 
                   onLoad={onImgLoadedSet} 
                   alt="Patient five stoma first picture" 
                   className="patient__picture"
@@ -36,7 +36,7 @@ const PatientFive = () => {
               <div>
                 {!imgLoaded && <PulseLoader color={"#495E85"} />}
                 <img 
-                  src="patient-five--two.webp" 
+                  src="close-up-hands-holding-clipboard.webp" 
                   onLoad={onImgLoadedSet} 
                   alt="Patient five stoma second picture" 
                   className="patient__picture"
@@ -50,7 +50,7 @@ const PatientFive = () => {
               <div>
                 {!imgLoaded && <PulseLoader color={"#495E85"} />}
                 <img 
-                  src="patient-five--three.webp" 
+                  src="close-up-hands-holding-clipboard.webp" 
                   onLoad={onImgLoadedSet} 
                   alt="Patient five stoma third picture" 
                   className="patient__picture"
@@ -64,7 +64,7 @@ const PatientFive = () => {
               <div>
                 {!imgLoaded && <PulseLoader color={"#495E85"} />}
                 <img 
-                  src="patient-five--four.webp" 
+                  src="close-up-hands-holding-clipboard.webp" 
                   onLoad={onImgLoadedSet} 
                   alt="Patient five stoma fourth picture" 
                   className="patient__picture"

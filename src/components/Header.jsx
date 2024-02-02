@@ -40,7 +40,7 @@ const Header = () => {
         <div className="header__container container">
           <div className="header__block">
             <Link to="/">
-              <img src="logo.png" alt="Logo" className="header__img" />
+              <img src="free-circular-logo.webp" alt="Logo" className="header__img" />
             </Link>
             {isNotAllowed && <Link to="/login"><button className="btn btn--login">Admin loggen</button>
             </Link>}
